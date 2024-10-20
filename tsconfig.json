@@ -1,9 +1,23 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-        "@/components": ["./components"],
-        "@/styles": ["./styles"],
+      "@/app": [
+        "app/*"
+      ],
+      "@/assets/*": [
+        "assets/*"
+      ],
+      "@/components": [
+        "components/index.ts"
+      ],
+      "@/types": [
+        "utils/types/index.ts"
+      ],
+      "@/styles": [
+        "styles/index.ts"
+      ],
     },
     "target": "es5",
     "allowJs": true,
@@ -17,12 +31,16 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true
-},
-"include": [
-  "**/*.ts",
-  "**/*.tsx",
-  ".expo/types/**/*.ts",
-  "expo-env.d.ts"
-],
-"exclude": ["node_modules", ".expo", "dist"]
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".expo",
+    "dist"
+  ]
 }

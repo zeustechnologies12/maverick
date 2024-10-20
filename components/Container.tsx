@@ -1,14 +1,21 @@
 import { useTheme } from "@rneui/themed";
 import { View, StyleSheet, ViewProps } from "react-native";
 
-export const Container = (props: ViewProps) => {
-  const { style, ...rest } = props;
+interface Props extends ViewProps {
+  backgroundColor?: string;
+}
+
+export const Container = (props: Props) => {
+  const { style, backgroundColor, ...rest } = props;
   const { theme } = useTheme();
   return (
     <View
       style={[
         styles.flex1,
-        { padding: theme.spacing.md, backgroundColor: theme.colors.background },
+        {
+          padding: theme.spacing.md,
+          backgroundColor: backgroundColor || theme.colors.background,
+        },
         style,
       ]}
       {...rest}
