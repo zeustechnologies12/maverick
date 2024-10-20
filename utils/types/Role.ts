@@ -1,4 +1,4 @@
 export enum Role {
-  PLAYER = 0,
-  ARENA_MANAGER = 1,
+  CUSTOMER = 0,
+  MANAGER = 1,
 }

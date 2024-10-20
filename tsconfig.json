@@ -15,6 +15,9 @@
       "@/types": [
         "utils/types/index.ts"
       ],
+      "@/api": [
+        "utils/api/index.ts"
+      ],
       "@/styles": [
         "styles/index.ts"
       ],

@@ -1,5 +1,5 @@
 import { Button, Container, Input, Icon, View, Text } from "@/components";
-import { Dimensions, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import { useTheme } from "@rneui/themed";
 import { useState } from "react";
 import { Flex } from "styles/Common";

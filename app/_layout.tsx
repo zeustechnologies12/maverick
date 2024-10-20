@@ -1,6 +1,8 @@
-import { Slot, Stack } from "expo-router";
+import { Slot } from "expo-router";
 
 import { ThemeProvider, createTheme } from "@rneui/themed";
+
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const theme = createTheme({
   mode: "light",
@@ -55,7 +57,7 @@ const theme = createTheme({
   },
   components: {
     Input: (_, theme) => ({
-      containerStyle: { gap: theme.spacing.xs, paddingHorizontal: 0 },
+      containerStyle: { gap: theme.spacing.sm, paddingHorizontal: 0 },
       inputStyle: {
         fontSize: theme.fontSize.sm,
       },
@@ -108,9 +110,13 @@ const theme = createTheme({
 });
 
 export default function RootLayout() {
+  const queryClient = new QueryClient();
+
   return (
-    <ThemeProvider theme={theme}>
-      <Slot></Slot>
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <Slot></Slot>
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }

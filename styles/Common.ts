@@ -12,6 +12,7 @@ export const Flex = {
     start: { justifyContent: "flex-start" },
     end: { justifyContent: "flex-end" },
     spaceBetween: { justifyContent: "space-between" },
+    spaceEvenly: { justifyContent: "space-evenly" },
   }),
   align: {
     self: StyleSheet.create({
