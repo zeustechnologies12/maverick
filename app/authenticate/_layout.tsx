@@ -6,13 +6,17 @@ const Layout = () => {
     <Stack>
       <Stack.Screen
         name="index"
+        options={{ headerShown: false }}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="register"
         options={{
           headerTitle: "Register",
           headerLeft: () => (
             <Icon
               name="arrow-left"
               type="font-awesome"
-              onPress={() => router.navigate("signin")}
+              onPress={() => router.back()}
             ></Icon>
           ),
         }}

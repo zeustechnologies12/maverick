@@ -1,3 +1,5 @@
+import { ApiResponse } from "./ApiResponse";
+
 export interface User {
   first_name: string;
   last_name: string;
@@ -5,5 +7,7 @@ export interface User {
   phone_number: string;
   email: string;
   password?: string;
-  role: "customer" | "manager";
+  role: string[];
 }
+
+export type UserResponse = ApiResponse<User>;

@@ -18,8 +18,14 @@
       "@/api": [
         "utils/api/index.ts"
       ],
+      "@/validationSchema": [
+        "utils/validationSchema/index.ts"
+      ],
       "@/styles": [
         "styles/index.ts"
+      ],
+      "@/hooks": [
+        "hooks/index.ts"
       ],
     },
     "target": "es5",

@@ -1,10 +1,9 @@
 import { AxiosInstance } from "axios";
 
 import { api } from "./http/NetworkClient";
-import { ApiResponse, User } from "@/types";
+import { User, UserResponse } from "@/types";
 import ResponseBuilder, { serializeError } from "./http/ResponseBuilder";
-
-type UserResponseBody = ApiResponse<User>;
+import { SignUpKeys } from "@/types";
 
 class Register {
   private api: AxiosInstance;
@@ -13,14 +12,13 @@ class Register {
     this.api = api();
   }
 
-  async storeUser(payload: User): Promise<any> {
+  async storeUser(payload: SignUpKeys): Promise<UserResponse> {
     try {
-      const { data } = await this.api.post<UserResponseBody>(
-        `/users/signup/`,
-        payload
-      );
+      const {
+        data: { data: user, message },
+      } = await this.api.post<UserResponse>(`/users/signup/`, payload);
 
-      return ResponseBuilder.ok(data);
+      return ResponseBuilder.ok<User>(user, message);
     } catch (error: unknown) {
       throw serializeError(error);
     }

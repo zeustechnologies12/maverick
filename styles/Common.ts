@@ -20,5 +20,10 @@ export const Flex = {
       start: { alignSelf: "flex-start" },
       end: { alignSelf: "flex-end" },
     }),
+    items: StyleSheet.create({
+      center: { alignItems: "center" },
+      start: { alignItems: "flex-start" },
+      end: { alignItems: "flex-end" },
+    }),
   },
 };

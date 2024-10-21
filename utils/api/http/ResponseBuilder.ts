@@ -133,10 +133,14 @@ class ResponseBuilder {
     ) as ErrorResponseBody;
   }
 
-  public static ok<T extends object>(result: T): ApiResponse<T> {
+  public static ok<T extends object>(
+    result: T,
+    message?: string
+  ): ApiResponse<T> {
     return ResponseBuilder._returnAs(
       result,
-      HttpStatusCode.OK
+      HttpStatusCode.OK,
+      message
     ) as ApiResponse<T>;
   }
 
@@ -154,11 +158,15 @@ class ResponseBuilder {
     ) as ApiResponse<T>;
   }
 
-  private static _returnAs<T extends object>(result: T, statusCode: number) {
+  private static _returnAs<T extends object>(
+    result: T,
+    statusCode: number,
+    message?: string
+  ) {
     const bodyObject: ErrorResponseBody | ApiResponse<T> =
       result instanceof ErrorResult
         ? { success: false, error: result }
-        : { success: true, status: statusCode, data: result };
+        : { success: true, status: statusCode, data: result, message };
 
     return bodyObject;
   }
