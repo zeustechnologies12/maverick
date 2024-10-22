@@ -1,0 +1,30 @@
+export const HttpStatusCode = {
+  OK: 200,
+  CREATED: 201,
+  NO_CONTENT: 204,
+  MOVED_PERMANENTLY: 301,
+  FOUND: 302,
+  SEE_OTHER: 303,
+  NOT_MODIFIED: 304,
+  BAD_REQUEST: 400,
+  UN_AUTHORIZED: 401,
+  FORBIDDEN: 403,
+  NOT_FOUND: 404,
+  GONE: 410,
+  UNPROCESSIBLE_ENTITY: 422,
+  TOO_MANY_REQUESTS: 429,
+  INTERNAL_SERVER_ERROR: 500,
+  SERVICE_UNAVAILABLE: 503,
+  GATEWAY_TIMEOUT: 504,
+} as const;
+export type StatusCode = (typeof HttpStatusCode)[keyof typeof HttpStatusCode];
+export const HttpErrorCode = {
+  GeneralError: "GENERAL_ERROR",
+  InternalServerError: "INTERNAL_SERVER_ERROR",
+  HttpError: "HTTP_ERROR",
+  ServiceUnavailableError: "SERVICE_UNAVAILABLE_ERROR",
+  BadRequestError: "BAD_REQUEST_ERROR",
+  UnauthorizedError: "Unauthorized_Error",
+  ForbiddenError: "FORBIDDEN_ERROR",
+  UnprocessableEntity: "UNPROCESSABLE_ENTITY",
+};

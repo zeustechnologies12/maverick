@@ -1,17 +1,55 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true,
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
-    }
+      "@/app": [
+        "app/*"
+      ],
+      "@/assets/*": [
+        "assets/*"
+      ],
+      "@/components": [
+        "components/index.ts"
+      ],
+      "@/types": [
+        "utils/types/index.ts"
+      ],
+      "@/api": [
+        "utils/api/index.ts"
+      ],
+      "@/validationSchema": [
+        "utils/validationSchema/index.ts"
+      ],
+      "@/styles": [
+        "styles/index.ts"
+      ],
+      "@/hooks": [
+        "hooks/index.ts"
+      ],
+    },
+    "target": "es5",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".expo",
+    "dist"
   ]
 }
