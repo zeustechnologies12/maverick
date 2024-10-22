@@ -1,1 +1,1 @@
-export { SignupSchema } from "./SignupSchema";
+export { SigninSchema, SignupSchema } from "./Authentication";

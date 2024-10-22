@@ -78,6 +78,7 @@ const Page = () => {
           <Text style={theme.textStyle.label.lg}>{error}</Text>
           <Button
             title={"Close"}
+            size="sm"
             onPress={() => {
               toggleErrorSheetVisibility();
             }}
@@ -171,6 +172,7 @@ const Page = () => {
                   onChangeText={onChange}
                   errorMessage={errors.email?.message}
                   autoCapitalize="none"
+                  textContentType="emailAddress"
                 ></Input>
               )}
             ></Controller>

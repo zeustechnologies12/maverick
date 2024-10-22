@@ -1,16 +1,20 @@
 import { useMutation } from "react-query";
 
-import { ErrorResponseBody, RegisterApi } from "@/api";
-import { SignUpKeys, UserResponse } from "@/types";
+import { ErrorResponseBody, AuthenticatationApi } from "@/api";
+import { SignUpKeys, SignUpResponse } from "@/types";
 
 const useRegisterUser = (
-  onSuccess?: (_: UserResponse) => void,
+  onSuccess?: (_: SignUpResponse) => void,
   onError?: (_: ErrorResponseBody) => void
 ) => {
-  const registerApi = new RegisterApi();
+  const authenticatationApi = new AuthenticatationApi();
 
-  return useMutation<UserResponse, ErrorResponseBody, { payload: SignUpKeys }>(
-    ({ payload }) => registerApi.storeUser(payload).then((data) => data),
+  return useMutation<
+    SignUpResponse,
+    ErrorResponseBody,
+    { payload: SignUpKeys }
+  >(
+    ({ payload }) => authenticatationApi.regsiter(payload).then((data) => data),
     {
       onSuccess,
       onError,

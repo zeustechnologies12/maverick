@@ -12,6 +12,7 @@ const Layout = () => {
         name="register"
         options={{
           headerTitle: "Register",
+          headerTitleAlign: "center",
           headerLeft: () => (
             <Icon
               name="arrow-left"

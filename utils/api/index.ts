@@ -1,2 +1,2 @@
-export { default as RegisterApi } from "./Register";
+export { default as AuthenticatationApi } from "./Authenticatation";
 export { type ErrorResponseBody } from "./http";
